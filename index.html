@@ -1785,8 +1785,10 @@ function animateCounter(el) {
       ctaH.appendChild(cursor);
 
       const lines = [
-        { text: 'Turn your Instagram\ninto a ', italic: false },
-        { text: 'client machine.',              italic: true  },
+        { text: 'Turn your Instagram', italic: false },
+        { text: '',                    italic: false, br: true },
+        { text: 'into a ',             italic: false },
+        { text: 'client machine.',     italic: true  },
       ];
 
       let si = 0, ci = 0;
@@ -1807,17 +1809,19 @@ function animateCounter(el) {
           setTimeout(() => { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }, 600);
           return;
         }
-        const seg  = lines[si];
+        const seg = lines[si];
+        if (seg.br) {
+          display.appendChild(document.createElement('br'));
+          si++; ci = 0;
+          setTimeout(typeNext, 120);
+          return;
+        }
         if (ci === 0) buildSpan(seg.italic);
         const char = seg.text[ci];
-        if (char === '\n') {
-          display.appendChild(document.createElement('br'));
-        } else {
-          activeEl.textContent += char;
-        }
+        activeEl.textContent += char;
         ci++;
         if (ci >= seg.text.length) { si++; ci = 0; }
-        const delay = char === '.' ? 300 : char === '\n' ? 150 : 42 + Math.random() * 20;
+        const delay = char === '.' ? 300 : 42 + Math.random() * 20;
         setTimeout(typeNext, delay);
       }
       setTimeout(typeNext, 200);
