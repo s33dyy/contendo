@@ -1721,8 +1721,10 @@ function animateCounter(el) {
   if (!staticEl || !cursorEl) return;
 
   const segments = [
-    { text: 'We turn content into ', italic: false },
-    { text: 'clients.',              italic: true  },
+    { text: 'We turn content', italic: false },
+    { text: '',                italic: false, br: true },
+    { text: 'into ',           italic: false },
+    { text: 'clients.',        italic: true  },
   ];
 
   let segIdx = 0, charIdx = 0;
@@ -1741,6 +1743,12 @@ function animateCounter(el) {
       return;
     }
     const seg = segments[segIdx];
+    if (seg.br) {
+      staticEl.appendChild(document.createElement('br'));
+      segIdx++; charIdx = 0;
+      setTimeout(typeChar, 120);
+      return;
+    }
     if (charIdx === 0) buildNextSpan(seg.italic);
     const char = seg.text[charIdx];
     currentEl.textContent += char;
