@@ -1795,13 +1795,9 @@ function animateCounter(el) {
       let activeEl = null;
 
       function buildSpan(italic) {
-        if (italic) {
-          const em = document.createElement('em');
-          display.appendChild(em);
-          activeEl = em;
-        } else {
-          activeEl = display;
-        }
+        const el = document.createElement(italic ? 'em' : 'span');
+        display.appendChild(el);
+        activeEl = el;
       }
 
       function typeNext() {
