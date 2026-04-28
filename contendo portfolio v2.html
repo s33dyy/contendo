@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contendo — Agency Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --green:       #6F8F7B;
+  --dark-green:  #4F6F63;
+  --sage:        #A8C1B5;
+  --beige:       #CBB8A0;
+  --bg:          #F5F5F2;
+  --white:       #FFFFFF;
+  --ink:         #1C1C1A;
+  --ink-light:   #5A5A56;
+  --rule:        #DDD8D0;
+}
+
+html { background: #e8e6e0; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: #e8e6e0;
+  padding: 40px 20px 60px;
+  color: var(--ink);
+}
+
+/* ── PAGE SHELL ── */
+.page {
+  width: 794px;          /* A4 width @ 96dpi */
+  min-height: 1123px;    /* A4 height @ 96dpi */
+  background: var(--bg);
+  margin: 0 auto 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(0,0,0,.14);
+}
+
+/* ── PRINT ── */
+@media print {
+  html, body { background: none; padding: 0; }
+  .page { margin: 0; box-shadow: none; page-break-after: always; width: 100%; min-height: 100vh; }
+  .print-btn { display: none !important; }
+}
+
+/* ── PRINT BUTTON ── */
+.print-btn {
+  display: block;
+  width: 794px;
+  margin: 0 auto 20px;
+  text-align: right;
+}
+.print-btn button {
+  background: var(--dark-green); color: #fff;
+  border: none; padding: 10px 22px; border-radius: 6px;
+  font-family: 'Jost'; font-size: 13px; font-weight: 500;
+  cursor: pointer; letter-spacing: .5px;
+}
+.print-btn button:hover { background: var(--green); }
+
+/* ════════════════════════════════
+   PAGE 1
+════════════════════════════════ */
+
+/* Top bar */
+.p1-topbar {
+  background: var(--dark-green);
+  padding: 18px 52px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.p1-logo {
+  font-family: 'Playfair Display'; font-size: 22px;
+  font-weight: 500; color: #fff; letter-spacing: .5px;
+}
+.p1-tagline-top {
+  font-family: 'DM Mono'; font-size: 10px;
+  color: var(--sage); letter-spacing: 2px; text-transform: uppercase;
+}
+
+/* Hero block */
+.p1-hero {
+  padding: 62px 52px 48px;
+  border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: 1fr 220px;
+  gap: 40px; align-items: end;
+}
+.p1-hero-left {}
+.p1-hero-label {
+  font-family: 'DM Mono'; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--green); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.p1-hero-label::before {
+  content: ''; width: 24px; height: 1px; background: var(--green);
+}
+.p1-hero-h1 {
+  font-family: 'Playfair Display'; font-size: 46px;
+  font-weight: 400; line-height: 1.08;
+  color: var(--ink); margin-bottom: 20px;
+}
+.p1-hero-h1 em {
+  font-style: italic; color: var(--dark-green);
+}
+.p1-hero-body {
+  font-size: 14px; font-weight: 300; line-height: 1.8;
+  color: var(--ink-light); max-width: 380px;
+}
+
+/* Stats column */
+.p1-stats {
+  display: flex; flex-direction: column; gap: 0;
+  border-left: 1px solid var(--rule); padding-left: 32px;
+}
+.p1-stat { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.p1-stat:last-child { border-bottom: none; }
+.p1-stat-num {
+  font-family: 'Playfair Display'; font-size: 38px;
+  font-weight: 500; color: var(--dark-green); line-height: 1;
+  margin-bottom: 4px;
+}
+.p1-stat-label {
+  font-size: 11px; font-weight: 400; color: var(--ink-light);
+  letter-spacing: .3px;
+}
+
+/* Services */
+.p1-services { padding: 44px 52px 0; }
+.section-label {
+  font-family: 'DM Mono'; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--green); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::before {
+  content: ''; width: 24px; height: 1px; background: var(--green);
+}
+.p1-svc-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 10px; overflow: hidden;
+}
+.p1-svc-item {
+  background: var(--white); padding: 24px 26px;
+}
+.p1-svc-num {
+  font-family: 'DM Mono'; font-size: 10px;
+  color: var(--beige); margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.p1-svc-name {
+  font-family: 'Playfair Display'; font-size: 16px;
+  font-weight: 500; color: var(--ink); margin-bottom: 8px;
+}
+.p1-svc-desc {
+  font-size: 12px; font-weight: 300;
+  color: var(--ink-light); line-height: 1.7;
+}
+
+/* Brands */
+.p1-brands { padding: 40px 52px 48px; }
+.p1-brand-list {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 0;
+}
+.p1-brand-pill {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 12px; font-weight: 400;
+  color: var(--ink-light);
+  display: flex; align-items: center; gap: 8px;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.p1-brand-pill:hover { border-color: var(--green); color: var(--dark-green); }
+.p1-brand-pill-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sage); flex-shrink: 0;
+}
+.p1-brand-pill span { color: var(--green); font-size: 11px; }
+
+/* P1 footer strip */
+.p1-footer {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--dark-green), var(--sage), var(--beige));
+}
+
+/* ════════════════════════════════
+   PAGE 2
+════════════════════════════════ */
+.p2-header {
+  padding: 36px 52px 28px;
+  border-bottom: 1px solid var(--rule);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.p2-logo {
+  font-family: 'Playfair Display'; font-size: 16px;
+  font-weight: 400; color: var(--dark-green); letter-spacing: .5px;
+}
+.p2-pg {
+  font-family: 'DM Mono'; font-size: 10px;
+  color: var(--beige); letter-spacing: 2px;
+}
+
+/* Case Study */
+.p2-cs { padding: 44px 52px 40px; border-bottom: 1px solid var(--rule); }
+.cs-header-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 32px;
+}
+.cs-brand-name {
+  font-family: 'Playfair Display'; font-size: 34px;
+  font-weight: 400; color: var(--ink);
+  margin-bottom: 6px;
+}
+.cs-brand-link {
+  font-family: 'DM Mono'; font-size: 11px;
+  color: var(--green); text-decoration: none; letter-spacing: .5px;
+}
+.cs-brand-link:hover { color: var(--dark-green); }
+.cs-industry-tag {
+  background: var(--sage); color: var(--dark-green);
+  font-size: 11px; font-weight: 500;
+  padding: 6px 16px; border-radius: 20px;
+  align-self: flex-start; margin-top: 6px;
+  letter-spacing: .5px;
+}
+.cs-cols {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+}
+.cs-col { background: var(--white); padding: 26px; }
+.cs-col-head {
+  font-family: 'DM Mono'; font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 14px; padding-bottom: 12px;
+  border-bottom: 2px solid;
+}
+.cs-col.prob .cs-col-head  { color: #b85c5c; border-color: #f0d0d0; }
+.cs-col.sol  .cs-col-head  { color: var(--dark-green); border-color: var(--sage); }
+.cs-col.res  .cs-col-head  { color: #4a7c5a; border-color: #c0ddc8; }
+.cs-col-body {
+  font-size: 13px; font-weight: 300; color: var(--ink-light); line-height: 1.75;
+}
+.cs-result-big {
+  font-family: 'Playfair Display'; font-size: 42px;
+  font-weight: 500; color: #4a7c5a;
+  display: block; margin-bottom: 6px; line-height: 1;
+}
+
+/* Why Us */
+.p2-why { padding: 40px 52px 44px; }
+.p2-why-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 0;
+}
+.p2-why-item {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.p2-why-icon {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: var(--white); border: 1px solid var(--rule);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 17px; flex-shrink: 0;
+}
+.p2-why-title {
+  font-size: 13px; font-weight: 600; color: var(--ink);
+  margin-bottom: 5px; letter-spacing: .2px;
+}
+.p2-why-desc {
+  font-size: 12px; font-weight: 300; color: var(--ink-light); line-height: 1.7;
+}
+
+.p2-footer {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--dark-green), var(--sage), var(--beige));
+}
+
+/* ════════════════════════════════
+   PAGE 3
+════════════════════════════════ */
+.p3-header {
+  padding: 36px 52px 28px;
+  border-bottom: 1px solid var(--rule);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.p3-logo {
+  font-family: 'Playfair Display'; font-size: 16px;
+  font-weight: 400; color: var(--dark-green);
+}
+.p3-pg {
+  font-family: 'DM Mono'; font-size: 10px;
+  color: var(--beige); letter-spacing: 2px;
+}
+
+/* Brand Deep Dive */
+.p3-brands { padding: 44px 52px 40px; border-bottom: 1px solid var(--rule); }
+.p3-brand-rows { display: flex; flex-direction: column; gap: 0; }
+.p3-brand-row {
+  display: grid; grid-template-columns: 200px 1fr 120px;
+  gap: 24px; align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.p3-brand-row:last-child { border-bottom: none; }
+.p3-brand-name-col { }
+.p3-brand-nm {
+  font-family: 'Playfair Display'; font-size: 15px;
+  font-weight: 500; color: var(--ink); margin-bottom: 3px;
+}
+.p3-brand-niche {
+  font-size: 11px; color: var(--ink-light); font-weight: 300;
+}
+.p3-brand-note {
+  font-size: 12px; font-weight: 300;
+  color: var(--ink-light); line-height: 1.7;
+}
+.p3-brand-link-col { text-align: right; }
+.p3-brand-link {
+  font-family: 'DM Mono'; font-size: 10px;
+  color: var(--green); text-decoration: none;
+  letter-spacing: .5px; display: block; margin-bottom: 2px;
+}
+.p3-brand-link:hover { color: var(--dark-green); }
+
+/* CTA */
+.p3-cta {
+  padding: 52px;
+  background: var(--dark-green);
+  position: relative; overflow: hidden;
+}
+.p3-cta::before {
+  content: '';
+  position: absolute; right: -60px; top: -60px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: rgba(168, 193, 181, .12);
+  pointer-events: none;
+}
+.p3-cta::after {
+  content: '';
+  position: absolute; right: 40px; bottom: -80px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(203, 184, 160, .08);
+  pointer-events: none;
+}
+.p3-cta-eyebrow {
+  font-family: 'DM Mono'; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.p3-cta-eyebrow::before {
+  content: ''; width: 20px; height: 1px; background: var(--sage);
+}
+.p3-cta-h {
+  font-family: 'Playfair Display'; font-size: 36px;
+  font-weight: 400; color: #fff; line-height: 1.15;
+  margin-bottom: 16px;
+}
+.p3-cta-h em { font-style: italic; color: var(--sage); }
+.p3-cta-sub {
+  font-size: 13px; font-weight: 300; color: rgba(255,255,255,.65);
+  line-height: 1.8; max-width: 420px; margin-bottom: 36px;
+}
+.p3-cta-contacts {
+  display: flex; gap: 32px; flex-wrap: wrap;
+}
+.p3-contact-item { }
+.p3-contact-label {
+  font-family: 'DM Mono'; font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 5px;
+}
+.p3-contact-val {
+  font-size: 13px; font-weight: 500; color: #fff;
+  text-decoration: none;
+}
+.p3-contact-val:hover { color: var(--sage); }
+
+/* Design Notes Panel */
+.design-notes {
+  margin: 48px auto 0;
+  width: 794px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 32px 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+}
+.dn-title {
+  font-family: 'Playfair Display'; font-size: 20px;
+  color: var(--dark-green); margin-bottom: 20px;
+  padding-bottom: 16px; border-bottom: 1px solid #eee;
+}
+.dn-section { margin-bottom: 22px; }
+.dn-section-head {
+  font-family: 'DM Mono'; font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--green); margin-bottom: 10px;
+}
+.dn-section-body {
+  font-size: 13px; font-weight: 300; line-height: 1.8; color: #444;
+}
+.dn-section-body ul { padding-left: 16px; }
+.dn-section-body li { margin-bottom: 5px; }
+.swatch-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.swatch {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; color: #555; font-family: 'DM Mono';
+}
+.swatch-box { width: 28px; height: 28px; border-radius: 5px; border: 1px solid #ddd; }
+</style>
+</head>
+<body>
+
+<div class="print-btn">
+  <button onclick="window.print()">⬇ Save / Print as PDF</button>
+</div>
+
+<!-- ════════════════════════
+     PAGE 1
+════════════════════════ -->
+<div class="page" id="page1">
+
+  <div class="p1-topbar">
+    <div class="p1-logo">Contendo</div>
+    <div class="p1-tagline-top">Instagram Growth Agency</div>
+  </div>
+
+  <div class="p1-hero">
+    <div class="p1-hero-left">
+      <div class="p1-hero-label">Agency Portfolio · 2026</div>
+      <h1 class="p1-hero-h1">We turn content<br>into <em>clients.</em></h1>
+      <p class="p1-hero-body">
+        Contendo is a content-first Instagram growth agency. We build the systems, strategy, and creative that help brands get seen — and turn that attention into real business results.
+      </p>
+    </div>
+    <div class="p1-stats">
+      <div class="p1-stat">
+        <div class="p1-stat-num">15+</div>
+        <div class="p1-stat-label">Brands Served</div>
+      </div>
+      <div class="p1-stat">
+        <div class="p1-stat-num">3×</div>
+        <div class="p1-stat-label">Avg. Engagement Lift</div>
+      </div>
+      <div class="p1-stat">
+        <div class="p1-stat-num">60d</div>
+        <div class="p1-stat-label">Average Time to Results</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p1-services">
+    <div class="section-label">What We Do</div>
+    <div class="p1-svc-grid">
+      <div class="p1-svc-item">
+        <div class="p1-svc-num">01</div>
+        <div class="p1-svc-name">Reels Creation & Editing</div>
+        <div class="p1-svc-desc">Hook-first scripts, professional editing, captions, and publishing — built to stop the scroll and drive real engagement.</div>
+      </div>
+      <div class="p1-svc-item">
+        <div class="p1-svc-num">02</div>
+        <div class="p1-svc-name">Poster & Carousel Design</div>
+        <div class="p1-svc-desc">On-brand visual content that builds authority, drives saves, and keeps your feed looking premium and cohesive.</div>
+      </div>
+      <div class="p1-svc-item">
+        <div class="p1-svc-num">03</div>
+        <div class="p1-svc-name">Content Strategy</div>
+        <div class="p1-svc-desc">Monthly content calendars, niche positioning, and audience mapping. A full roadmap tailored to your growth goals.</div>
+      </div>
+      <div class="p1-svc-item">
+        <div class="p1-svc-num">04</div>
+        <div class="p1-svc-name">Social Media Management</div>
+        <div class="p1-svc-desc">End-to-end management so you focus on running your business while we grow your Instagram presence consistently.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p1-brands">
+    <div class="section-label">Brands We've Worked With</div>
+    <div class="p1-brand-list">
+      <a class="p1-brand-pill" href="https://www.instagram.com/studio_cootell" target="_blank">
+        <div class="p1-brand-pill-dot"></div> Studio Cootell <span>↗</span>
+      </a>
+      <a class="p1-brand-pill" href="https://www.instagram.com/petdreamlandd" target="_blank">
+        <div class="p1-brand-pill-dot"></div> Pet Dreamland <span>↗</span>
+      </a>
+      <a class="p1-brand-pill" href="https://www.instagram.com/wavelengthcafekolkata" target="_blank">
+        <div class="p1-brand-pill-dot"></div> Wavelength Cafe Kolkata <span>↗</span>
+      </a>
+      <a class="p1-brand-pill" href="https://www.instagram.com/spartansgymdwarka" target="_blank">
+        <div class="p1-brand-pill-dot"></div> Spartans Gym Dwarka <span>↗</span>
+      </a>
+      <a class="p1-brand-pill" href="https://www.instagram.com/chiropractor360" target="_blank">
+        <div class="p1-brand-pill-dot"></div> Chiropractor 360 <span>↗</span>
+      </a>
+      <div class="p1-brand-pill" style="border-style:dashed; cursor:default;">
+        <div class="p1-brand-pill-dot" style="background:#ddd;"></div> + 10 more brands
+      </div>
+    </div>
+  </div>
+
+  <div class="p1-footer"></div>
+</div>
+
+
+<!-- ════════════════════════
+     PAGE 2
+════════════════════════ -->
+<div class="page" id="page2">
+
+  <div class="p2-header">
+    <div class="p2-logo">Contendo</div>
+    <div class="p2-pg">Page 02 / 03</div>
+  </div>
+
+  <!-- Case Study -->
+  <div class="p2-cs">
+    <div class="section-label">Case Study</div>
+    <div class="cs-cols">
+      <div class="cs-col prob">
+        <div class="cs-col-head">Problem</div>
+        <div class="cs-col-body">
+          New brand with no content system. Posting was sporadic, reach was near zero, and there was no clear brand voice to attract and retain a pet-owner audience.
+        </div>
+      </div>
+      <div class="cs-col sol">
+        <div class="cs-col-head">Solution</div>
+        <div class="cs-col-body">
+          Built a full content system from scratch — brand identity, Reels strategy, hook-first scripts, and a structured monthly calendar. Every post served a specific reach, save, or conversion goal.
+        </div>
+      </div>
+      <div class="cs-col res">
+        <div class="cs-col-head">Result</div>
+        <div class="cs-col-body">
+          <span class="cs-result-big">3×</span>
+          Engagement rate growth within 60 days. Consistent reach, stronger brand presence, and a content engine that keeps compounding.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Us -->
+  <div class="p2-why">
+    <div class="section-label">Why Choose Contendo</div>
+    <div class="p2-why-grid">
+      <div class="p2-why-item">
+        <div class="p2-why-icon">🎯</div>
+        <div>
+          <div class="p2-why-title">Strategy Before Content</div>
+          <div class="p2-why-desc">Every piece we produce starts with a clear goal — reach, saves, DMs, or conversions. No random posting, ever.</div>
+        </div>
+      </div>
+      <div class="p2-why-item">
+        <div class="p2-why-icon">⚡</div>
+        <div>
+          <div class="p2-why-title">Built for the Algorithm</div>
+          <div class="p2-why-desc">Hook structures, watch-time retention, and save-worthy formats — content the Instagram algorithm is designed to push.</div>
+        </div>
+      </div>
+      <div class="p2-why-item">
+        <div class="p2-why-icon">📋</div>
+        <div>
+          <div class="p2-why-title">Full Transparency</div>
+          <div class="p2-why-desc">Monthly content calendar shared upfront. You review, approve, and we publish. You always know what's going out and why.</div>
+        </div>
+      </div>
+      <div class="p2-why-item">
+        <div class="p2-why-icon">📈</div>
+        <div>
+          <div class="p2-why-title">Results in 60 Days</div>
+          <div class="p2-why-desc">We don't ask for 6 months before showing value. Most clients see a measurable lift in reach and engagement within the first two months.</div>
+        </div>
+      </div>
+      <div class="p2-why-item">
+        <div class="p2-why-icon">🤝</div>
+        <div>
+          <div class="p2-why-title">We're a System, Not Editors</div>
+          <div class="p2-why-desc">Contendo delivers strategy, creative, and execution under one roof — a complete growth engine, not a freelance content service.</div>
+        </div>
+      </div>
+      <div class="p2-why-item">
+        <div class="p2-why-icon">🔁</div>
+        <div>
+          <div class="p2-why-title">Ongoing Optimisation</div>
+          <div class="p2-why-desc">We track performance weekly and adjust. Every month gets sharper than the last because we treat your data like a playbook.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p2-footer"></div>
+</div>
+
+
+<!-- ════════════════════════
+     PAGE 3
+════════════════════════ -->
+<div class="page" id="page3">
+
+  <div class="p3-header">
+    <div class="p3-logo">Contendo</div>
+    <div class="p3-pg">Page 03 / 03</div>
+  </div>
+
+  <!-- Brands Deep Dive -->
+  <div class="p3-brands">
+    <div class="section-label">Client Work</div>
+    <div class="p3-brand-rows">
+      <div class="p3-brand-row">
+        <div class="p3-brand-name-col">
+          <div class="p3-brand-nm">Studio Cootell</div>
+          <div class="p3-brand-niche">Interior Design</div>
+        </div>
+        <div class="p3-brand-note">Content strategy and Reels production to build an aesthetic brand presence and grow a creative-industry audience on Instagram.</div>
+        <div class="p3-brand-link-col">
+          <a class="p3-brand-link" href="https://www.instagram.com/studio_cootell" target="_blank">@studio_cootell ↗</a>
+        </div>
+      </div>
+      <div class="p3-brand-row">
+        <div class="p3-brand-name-col">
+          <div class="p3-brand-nm">Pet Dreamland</div>
+          <div class="p3-brand-niche">Restaurant</div>
+        </div>
+        <div class="p3-brand-note">Built a full Instagram content system from scratch — brand identity, scripted Reels, and a monthly calendar — achieving 3× engagement growth in 60 days.</div>
+        <div class="p3-brand-link-col">
+          <a class="p3-brand-link" href="https://www.instagram.com/petdreamlandd" target="_blank">@petdreamlandd ↗</a>
+        </div>
+      </div>
+      <div class="p3-brand-row">
+        <div class="p3-brand-name-col">
+          <div class="p3-brand-nm">Wavelength Cafe Kolkata</div>
+          <div class="p3-brand-niche">F&B / Hospitality</div>
+        </div>
+        <div class="p3-brand-note">Visual-first content strategy with Reels and poster design to drive footfall and build a local community of loyal followers.</div>
+        <div class="p3-brand-link-col">
+          <a class="p3-brand-link" href="https://www.instagram.com/wavelengthcafekolkata" target="_blank">@wavelengthcafekolkata ↗</a>
+        </div>
+      </div>
+      <div class="p3-brand-row">
+        <div class="p3-brand-name-col">
+          <div class="p3-brand-nm">Spartans Gym Dwarka</div>
+          <div class="p3-brand-niche">Health & Fitness</div>
+        </div>
+        <div class="p3-brand-note">High-energy Reels content and social media management to attract new gym members and strengthen brand authority in their local market.</div>
+        <div class="p3-brand-link-col">
+          <a class="p3-brand-link" href="https://www.instagram.com/spartansgymdwarka" target="_blank">@spartansgymdwarka ↗</a>
+        </div>
+      </div>
+      <div class="p3-brand-row">
+        <div class="p3-brand-name-col">
+          <div class="p3-brand-nm">Chiropractor 360</div>
+          <div class="p3-brand-niche">Health & Wellness</div>
+        </div>
+        <div class="p3-brand-note">Educational Reels and trust-building content designed to position the practice as the go-to authority and convert viewers into booked appointments.</div>
+        <div class="p3-brand-link-col">
+          <a class="p3-brand-link" href="https://www.instagram.com/chiropractor360" target="_blank">@chiropractor360 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="p3-cta">
+    <div class="p3-cta-eyebrow">Let's Work Together</div>
+    <h2 class="p3-cta-h">Ready to turn your Instagram<br>into a <em>client machine?</em></h2>
+    <p class="p3-cta-sub">
+      We take on a limited number of new brands each month. If you're serious about growing on Instagram and converting that attention into real revenue — let's talk.
+    </p>
+    <div class="p3-cta-contacts">
+      <div class="p3-contact-item">
+        <div class="p3-contact-label">Email</div>
+        <a class="p3-contact-val" href="/cdn-cgi/l/email-protection#ff9c90918b9a919b90cdc7bf98929e9693d19c9092"><span class="__cf_email__" data-cfemail="a0c3cfced4c5cec4cf9298e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</span></a>
+      </div>
+      <div class="p3-contact-item">
+        <div class="p3-contact-label">Phone</div>
+        <a class="p3-contact-val" href="tel:+918777021228">+91 87770 21228</a>
+      </div>
+      <div class="p3-contact-item">
+        <div class="p3-contact-label">Instagram</div>
+        <a class="p3-contact-val" href="https://www.instagram.com/contendo" target="_blank">@contendo</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page 3 -->
+
+</body>
+</html>

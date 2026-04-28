@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- ═══ SEO META ═══ -->
+<title>Contendo | Instagram Growth Agency</title>
+<meta name="description" content="Contendo is a strategy-first Instagram growth agency. We build content systems that turn your followers into clients — Reels, design, strategy, and full social media management."/>
+<meta name="keywords" content="instagram growth agency, social media marketing, reels growth, content strategy, instagram management, social media agency india"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Contendo"/>
+<link rel="canonical" href="https://contendo.in/"/>
+
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Contendo | Instagram Growth Agency"/>
+<meta property="og:description" content="We turn content into clients. Strategy-first Instagram growth for brands that want to stand tall."/>
+<meta property="og:image" content="CONTENDO%20BRAND%20IDENTITY.jpg"/>
+<meta property="og:url" content="https://contendo.in/"/>
+<meta property="og:site_name" content="Contendo"/>
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Contendo | Instagram Growth Agency"/>
+<meta name="twitter:description" content="We turn content into clients. Strategy-first Instagram growth for brands that want to stand tall."/>
+<meta name="twitter:image" content="CONTENDO%20BRAND%20IDENTITY.jpg"/>
+
+<!-- ═══ STRUCTURED DATA ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Contendo",
+  "url": "https://contendo.in",
+  "logo": "CONTENDO%20BRAND%20IDENTITY.jpg",
+  "description": "Strategy-first Instagram growth agency that turns content into clients.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-87770-21228",
+    "contactType": "customer service"
+  },
+  "sameAs": [
+    "https://www.instagram.com/contendo"
+  ]
+}
+</script>
+
+<!-- ═══ FONTS ═══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+/* ═══════════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink:         #0d120e;
+  --ink-2:       #141a15;
+  --ink-3:       #1c2620;
+  --forest:      #2e4535;
+  --sage-dark:   #4F6F63;
+  --sage:        #6F8F7B;
+  --sage-mid:    #8aaa98;
+  --sage-light:  #A8C1B5;
+  --sage-pale:   #c8ddd5;
+  --beige:       #CBB8A0;
+  --beige-light: #e5d9cc;
+  --cream:       #F5F0E8;
+  --white:       #FAFAF8;
+
+  --ff-serif:  'Instrument Serif', Georgia, serif;
+  --ff-mono:   'Space Mono', monospace;
+  --ff-body:   'Outfit', sans-serif;
+
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--ff-body);
+  background: var(--ink);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a  { color: inherit; text-decoration: none; }
+
+/* ═══════════════════════════════════════════
+   UTILITY
+═══════════════════════════════════════════ */
+.label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage-mid);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.label::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--sage);
+  flex-shrink: 0;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL PROGRESS BAR
+═══════════════════════════════════════════ */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--sage-dark), var(--sage-light), var(--beige));
+  z-index: 999;
+  transition: width .08s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background .4s var(--ease-out), padding .4s var(--ease-out);
+}
+nav.scrolled {
+  background: rgba(13, 18, 14, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(106, 143, 123, 0.15);
+}
+.nav-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  font-family: var(--ff-serif);
+  font-size: 22px;
+  color: var(--white);
+  letter-spacing: .5px;
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--ff-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--sage-light);
+  letter-spacing: .5px;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--sage);
+  color: var(--ink) !important;
+  font-weight: 600 !important;
+  padding: 9px 22px;
+  border-radius: 40px;
+  font-size: 13px !important;
+  transition: background .2s, transform .2s !important;
+}
+.nav-cta:hover {
+  background: var(--sage-light) !important;
+  transform: translateY(-1px);
+  color: var(--ink) !important;
+}
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 110;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 2px;
+  transition: transform .3s var(--ease-out), opacity .3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  z-index: 105;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s var(--ease-out);
+}
+.nav-mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-mobile-link {
+  font-family: var(--ff-serif);
+  font-size: clamp(32px, 8vw, 52px);
+  color: var(--cream);
+  letter-spacing: .5px;
+  transition: color .2s;
+}
+.nav-mobile-link:hover { color: var(--sage-light); }
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 120px 60px 80px 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp .8s var(--ease-out) .2s forwards;
+}
+
+.hero-h1 {
+  font-family: var(--ff-serif);
+  font-size: clamp(48px, 5.5vw, 78px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 28px;
+  min-height: 2.1em;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--sage-light);
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--sage-pale);
+  max-width: 420px;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp .9s var(--ease-out) .5s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp .9s var(--ease-out) .65s forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sage);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 15px 32px;
+  border-radius: 50px;
+  letter-spacing: .3px;
+  transition: background .25s, transform .25s var(--ease-out), box-shadow .25s;
+}
+.btn-primary:hover {
+  background: var(--sage-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(111,143,123,.25);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sage-light);
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(168, 193, 181, 0.4);
+  padding-bottom: 2px;
+  transition: color .2s, border-color .2s;
+}
+.btn-secondary:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  animation: fadeIn 1.2s var(--ease-out) .1s forwards;
+  transform: scale(1.06);
+  transition: transform 8s ease;
+  will-change: transform;
+}
+.hero-right img.loaded { transform: scale(1.06); }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--ink) 0%, transparent 30%),
+              linear-gradient(to top, var(--ink) 0%, transparent 40%);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(106,143,123,.15);
+  opacity: 0;
+  animation: fadeUp .9s var(--ease-out) .8s forwards;
+}
+.hero-stat-num {
+  font-family: var(--ff-serif);
+  font-size: 36px;
+  color: var(--white);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--sage-mid);
+  letter-spacing: .5px;
+  margin-top: 4px;
+}
+
+/* ═══════════════════════════════════════════
+   MARQUEE
+═══════════════════════════════════════════ */
+.marquee-wrap {
+  background: var(--forest);
+  overflow: hidden;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+/* XPath: /html/body/div[2]/div — light text */
+.marquee-item {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cream);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  white-space: nowrap;
+}
+.marquee-item::after {
+  content: '✦';
+  color: var(--beige-light);
+  font-size: 8px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ═══════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════ */
+#services {
+  padding: 120px 0;
+  background: var(--ink-2);
+}
+.section-head {
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.section-h2 {
+  font-family: var(--ff-serif);
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+}
+.section-h2 em { font-style: italic; color: var(--sage-light); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: rgba(106, 143, 123, 0.12);
+  border: 1px solid rgba(106, 143, 123, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.svc-card {
+  background: var(--ink-2);
+  padding: 40px 40px 44px;
+  position: relative;
+  transition: background .3s;
+  cursor: default;
+}
+.svc-card:hover { background: var(--ink-3); }
+.svc-card:hover .svc-arrow { opacity: 1; transform: translate(0, 0); }
+.svc-card:hover .svc-icon { transform: scale(1.15) rotate(-5deg); }
+
+.svc-num {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  color: var(--sage);
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+.svc-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  display: block;
+  transition: transform .3s var(--ease-spring);
+}
+.svc-name {
+  font-family: var(--ff-serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.svc-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--sage-mid);
+  max-width: 340px;
+}
+.svc-arrow {
+  position: absolute;
+  top: 40px; right: 40px;
+  color: var(--sage);
+  font-size: 20px;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity .25s, transform .25s var(--ease-out);
+}
+
+/* ═══════════════════════════════════════════
+   CREATIVE SHOWCASE
+═══════════════════════════════════════════ */
+#creative {
+  padding: 120px 0;
+  background: var(--ink);
+}
+.creative-intro {
+  max-width: 560px;
+  margin-bottom: 72px;
+}
+.creative-intro p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--sage-light);
+  margin-top: 20px;
+}
+
+.creative-grid {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 24px;
+  align-items: stretch;
+  grid-auto-rows: clamp(480px, 60vw, 720px);
+}
+.creative-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ink-3);
+  display: flex;
+  flex-direction: column;
+}
+.creative-img-wrap {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+.creative-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s var(--ease-out);
+  display: block;
+}
+.creative-card:hover .creative-img-wrap img { transform: scale(1.03); }
+
+.creative-caption {
+  padding: 28px 32px;
+  background: var(--ink-3);
+  border-top: 1px solid rgba(106, 143, 123, 0.15);
+  flex-shrink: 0;
+}
+.creative-caption-tag {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--beige);
+  margin-bottom: 8px;
+}
+.creative-caption-title {
+  font-family: var(--ff-serif);
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.creative-caption-body {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--sage-mid);
+}
+
+/* ═══════════════════════════════════════════
+   CASE STUDY
+═══════════════════════════════════════════ */
+#case-study {
+  padding: 120px 0;
+  background: var(--forest);
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-client {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+/* XPath: /html/body/section[4]/div/div[1]/div[1] — light text */
+.cs-client-badge {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.cs-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,.07);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.cs-col {
+  padding: 48px 40px;
+  background: rgba(255,255,255,.03);
+  transition: background .3s;
+}
+.cs-col:hover { background: rgba(255,255,255,.06); }
+.cs-col-tag {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.cs-col.prob .cs-col-tag { color: var(--beige); }
+.cs-col.sol  .cs-col-tag { color: var(--sage-light); }
+.cs-col.res  .cs-col-tag { color: #a8d4b8; }
+
+.cs-col-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--sage-pale);
+}
+.cs-big-num {
+  font-family: var(--ff-serif);
+  font-size: 72px;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.cs-bottom {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.cs-quote {
+  font-family: var(--ff-serif);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--white);
+  max-width: 480px;
+  line-height: 1.5;
+}
+.cs-link {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  border-bottom: 1px solid rgba(168,193,181,.4);
+  padding-bottom: 3px;
+  transition: color .2s, border-color .2s;
+}
+.cs-link:hover { color: var(--white); border-color: var(--white); }
+
+/* ═══════════════════════════════════════════
+   WHY US
+═══════════════════════════════════════════ */
+#why {
+  padding: 120px 0;
+  background: var(--ink-2);
+}
+.why-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+.why-left {
+  position: sticky;
+  top: 120px;
+}
+.why-left .section-h2 { max-width: 300px; }
+.why-left p {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--sage-mid);
+}
+.why-left .btn-primary { margin-top: 36px; }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(106, 143, 123, 0.1);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.why-item {
+  background: var(--ink-2);
+  padding: 32px 30px;
+  transition: background .3s;
+}
+.why-item:hover { background: var(--ink-3); }
+.why-item:hover .why-item-icon { transform: scale(1.2) rotate(-8deg); }
+.why-item-icon {
+  font-size: 24px;
+  margin-bottom: 16px;
+  display: block;
+  transition: transform .3s var(--ease-spring);
+}
+.why-item-title {
+  font-family: var(--ff-serif);
+  font-size: 19px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.why-item-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--sage-mid);
+}
+
+/* ═══════════════════════════════════════════
+   CLIENTS
+═══════════════════════════════════════════ */
+#clients {
+  padding: 100px 0;
+  background: var(--ink);
+  border-top: 1px solid rgba(106, 143, 123, 0.1);
+}
+/* XPath: /html/body/section[7]/div/div[1] — light */
+.clients-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 52px;
+  flex-wrap: wrap;
+  gap: 24px;
+  color: var(--white);
+}
+/* XPath: /html/body/section[7]/div/h2/em — light italic */
+.clients-head .section-h2 em {
+  color: var(--sage-pale);
+}
+
+.clients-rows { display: flex; flex-direction: column; }
+.client-row {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(106, 143, 123, 0.12);
+  transition: padding .25s var(--ease-out);
+}
+.client-row:first-child { border-top: 1px solid rgba(106, 143, 123, 0.12); }
+.client-row:hover { padding-left: 12px; }
+/* XPath: /html/body/section[7]/div/div[3]/div[N]/div — light client names */
+.client-name {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  color: var(--white);
+}
+.client-niche {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sage-light);
+  margin-top: 4px;
+}
+.client-note {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--sage-mid);
+}
+.client-handle {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--sage-light);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color .2s;
+}
+.client-handle:hover { color: var(--white); }
+
+/* ═══════════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════════ */
+#cta {
+  padding: 140px 0;
+  background: var(--ink-3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(79, 111, 99, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-eyebrow { justify-content: center; margin-bottom: 28px; }
+.cta-h {
+  font-family: var(--ff-serif);
+  font-size: clamp(44px, 5.5vw, 76px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 24px;
+  min-height: 2.4em;
+}
+.cta-h em { font-style: italic; color: var(--sage-light); }
+.cta-sub {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--sage-mid);
+  max-width: 480px;
+  margin: 0 auto 52px;
+}
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cta-actions .btn-primary {
+  font-size: 15px;
+  padding: 17px 40px;
+}
+.cta-contact {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.cta-contact-item { text-align: center; }
+.cta-contact-label {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+.cta-contact-val {
+  font-family: var(--ff-serif);
+  font-size: 16px;
+  color: var(--white);
+  transition: color .2s;
+}
+.cta-contact-val:hover { color: var(--sage-light); }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  background: var(--ink);
+  padding: 40px 0;
+  border-top: 1px solid rgba(106, 143, 123, 0.12);
+}
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  color: var(--sage-light);
+}
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--sage-dark);
+}
+.footer-ig {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--sage);
+  transition: color .2s;
+}
+.footer-ig:hover { color: var(--sage-light); }
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════ */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── Scroll reveals ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+}
+.reveal-left.visible,
+.reveal-right.visible  { opacity: 1; transform: translate(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93) translateY(20px);
+  transition: opacity .85s var(--ease-out), transform .85s var(--ease-out);
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1) translateY(0); }
+
+/* ── Clip-path line reveal ── */
+.clip-reveal { position: relative; overflow: hidden; }
+.clip-reveal-inner {
+  display: block;
+  transform: translateY(110%);
+  transition: transform .9s var(--ease-out);
+}
+.clip-reveal.visible .clip-reveal-inner { transform: translateY(0); }
+.clip-reveal-inner em { font-style: italic; color: var(--sage-light); }
+
+/* ═══════════════════════════════════════════
+   TYPEWRITER
+═══════════════════════════════════════════ */
+.tw-static {
+  font-family: var(--ff-serif);
+  font-size: inherit;
+  color: var(--white);
+  white-space: pre-wrap;
+}
+.tw-static em {
+  font-style: italic;
+  color: var(--sage-light);
+}
+.tw-cursor-hero {
+  display: inline-block;
+  width: 3px;
+  height: .85em;
+  background: var(--sage);
+  margin-left: 3px;
+  vertical-align: -.05em;
+  border-radius: 2px;
+  animation: cursorBlink .75s step-end infinite;
+}
+.tw-cursor-hero.done {
+  animation: none;
+  opacity: 0;
+  transition: opacity .4s;
+}
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.tw-inline-cursor {
+  display: inline-block;
+  width: 2px;
+  height: .8em;
+  background: var(--sage-light);
+  margin-left: 2px;
+  vertical-align: -.05em;
+  border-radius: 1px;
+  animation: cursorBlink .75s step-end infinite;
+}
+
+/* ═══════════════════════════════════════════
+   WORD ROTATE (hero subtitle)
+═══════════════════════════════════════════ */
+.word-slot {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  vertical-align: bottom;
+  height: 1.2em;
+  min-width: 120px;
+}
+.word-slot-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform .5s var(--ease-out);
+}
+.word-slot-track span {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2;
+  color: var(--sage-light);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  #hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 120px 28px 60px; }
+  .hero-right { height: 60vw; order: -1; }
+  .hero-stats { flex-wrap: wrap; gap: 28px; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .creative-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .creative-img-wrap { height: 60vw; }
+  .cs-cols { grid-template-columns: 1fr; }
+  .why-layout { grid-template-columns: 1fr; gap: 48px; }
+  .why-left { position: static; }
+  .why-grid { grid-template-columns: 1fr; }
+  .client-row { grid-template-columns: 1fr; gap: 8px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile-menu { display: flex; }
+  .container { padding: 0 20px; }
+}
+
+@media (max-width: 600px) {
+  .hero-h1 { font-size: 38px; }
+  .cs-big-num { font-size: 52px; }
+  .cs-bottom { flex-direction: column; }
+  .cta-contact { gap: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ SCROLL PROGRESS ═══ -->
+<div id="progress-bar" aria-hidden="true"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">Contendo</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#creative">Creative</a></li>
+      <li><a href="#case-study">Results</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#cta" class="nav-cta">Book a Call</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="nav-mobile-menu" id="navMobileMenu" aria-hidden="true">
+  <a href="#services" class="nav-mobile-link">Services</a>
+  <a href="#creative" class="nav-mobile-link">Creative</a>
+  <a href="#case-study" class="nav-mobile-link">Results</a>
+  <a href="#clients" class="nav-mobile-link">Clients</a>
+  <a href="#cta" class="nav-cta" style="font-size:clamp(20px,4vw,28px);padding:14px 36px;">Book a Call</a>
+</div>
+
+<!-- ═══════════════
+     HERO
+═══════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow label">Instagram Growth Agency</div>
+    <h1 class="hero-h1">
+      <span class="tw-static" aria-hidden="true"></span><span class="tw-cursor-hero" aria-hidden="true"></span>
+      <span class="hero-h1-full" style="position:absolute;opacity:0;pointer-events:none" aria-label="We turn content into clients.">We turn content<br>into <em>clients.</em></span>
+    </h1>
+    <p class="hero-sub">
+      A strategy-first agency that turns your Instagram into a
+      <span id="rotate-slot" class="word-slot" aria-label="client machine">
+        <span class="word-slot-track">
+          <span>client machine.</span>
+          <span>growth engine.</span>
+          <span>sales channel.</span>
+          <span>brand asset.</span>
+          <span>client machine.</span>
+        </span>
+      </span><br>
+      Reels, design, strategy — one system, compounding results.
+    </p>
+    <div class="hero-actions">
+      <a href="#cta" class="btn-primary" aria-label="Book a discovery call">Book a Call ↗</a>
+      <a href="#case-study" class="btn-secondary" aria-label="See our results">See Results</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num" data-count="3" data-suffix="×">0×</div>
+        <div class="hero-stat-label">Avg. engagement lift</div>
+      </div>
+      <div>
+        <div class="hero-stat-num" data-count="60" data-suffix="">0</div>
+        <div class="hero-stat-label">Days to results</div>
+      </div>
+      <div>
+        <div class="hero-stat-num" data-count="15" data-suffix="+">0+</div>
+        <div class="hero-stat-label">Brands grown</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img
+      src="CONTENDO BRAND IDENTITY.jpg"
+      alt="Contendo brand identity — tree logo and visual system showcasing the agency's design aesthetic"
+      loading="eager"
+      fetchpriority="high"
+      id="heroImg"
+    />
+    <div class="hero-overlay" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═══ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">Reels Creation</div>
+    <div class="marquee-item">Poster Design</div>
+    <div class="marquee-item">Content Strategy</div>
+    <div class="marquee-item">Social Media Management</div>
+    <div class="marquee-item">Instagram Growth</div>
+    <div class="marquee-item">Brand Storytelling</div>
+    <div class="marquee-item">Algorithm-Optimised Content</div>
+    <div class="marquee-item">Reels Creation</div>
+    <div class="marquee-item">Poster Design</div>
+    <div class="marquee-item">Content Strategy</div>
+    <div class="marquee-item">Social Media Management</div>
+    <div class="marquee-item">Instagram Growth</div>
+    <div class="marquee-item">Brand Storytelling</div>
+    <div class="marquee-item">Algorithm-Optimised Content</div>
+  </div>
+</div>
+
+<!-- ═══════════════
+     SERVICES
+═══════════════ -->
+<section id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label">What We Do</div>
+      <h2 class="section-h2" id="services-heading">One system.<br><em>Every touchpoint.</em></h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="svc-card reveal reveal-delay-1">
+        <div class="svc-num">01</div>
+        <span class="svc-icon" aria-hidden="true">🎬</span>
+        <h3 class="svc-name">Reels Creation</h3>
+        <p class="svc-desc">Hook-first scripts, shoot direction, and editing optimised for watch-time and shares. Reels that the algorithm is built to push.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="svc-card reveal reveal-delay-2">
+        <div class="svc-num">02</div>
+        <span class="svc-icon" aria-hidden="true">🎨</span>
+        <h3 class="svc-name">Poster Design</h3>
+        <p class="svc-desc">Bold, branded visual content that stops the scroll. Every frame is designed with purpose — not just to look good, but to perform.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="svc-card reveal reveal-delay-3">
+        <div class="svc-num">03</div>
+        <span class="svc-icon" aria-hidden="true">♟</span>
+        <h3 class="svc-name">Content Strategy</h3>
+        <p class="svc-desc">A monthly content calendar built around your growth goals — reach, saves, DMs, or conversions. No random posting, ever.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+
+      <article class="svc-card reveal reveal-delay-4">
+        <div class="svc-num">04</div>
+        <span class="svc-icon" aria-hidden="true">📲</span>
+        <h3 class="svc-name">Social Media Management</h3>
+        <p class="svc-desc">Full end-to-end management so you focus on running your business while we grow your Instagram presence, consistently.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     CREATIVE
+═══════════════ -->
+<section id="creative" aria-labelledby="creative-heading">
+  <div class="container">
+    <div class="creative-intro reveal">
+      <div class="label">Our Creative Voice</div>
+      <h2 class="section-h2" id="creative-heading">Bold work.<br><em>Real brand stories.</em></h2>
+      <p>We don't make content that blends in. Every piece is built to make a statement, spark a reaction, and keep your audience coming back. This is what brand storytelling looks like when it's done right.</p>
+    </div>
+
+    <div class="creative-grid">
+      <div class="creative-card reveal-left">
+        <div class="creative-img-wrap">
+          <img
+            src="SHUT UP.jpg"
+            alt="Contendo poster reading 'Shut Your Mouth and Fly' — bold editorial poster design showcasing Contendo's fearless creative brand voice"
+            loading="lazy"
+          />
+        </div>
+        <div class="creative-caption">
+          <div class="creative-caption-tag">Bold Positioning</div>
+          <div class="creative-caption-title">"Shut Your Mouth and Fly"</div>
+          <div class="creative-caption-body">Some brands are too polite to stand out. We design content that dares to say what your audience is already thinking. Silence the noise — then soar.</div>
+        </div>
+      </div>
+
+      <div class="creative-card reveal-right">
+        <div class="creative-img-wrap">
+          <img
+            src="brand ka hight.jpg"
+            alt="Contendo poster reading 'Apne brand ki height barhaoo!' with a cool giraffe wearing glasses — playful bilingual branding by Contendo"
+            loading="lazy"
+          />
+        </div>
+        <div class="creative-caption">
+          <div class="creative-caption-tag">Brand Voice</div>
+          <div class="creative-caption-title">Apne brand ki height barhaoo!</div>
+          <div class="creative-caption-body">Playful. Desi. Disruptive. We speak your audience's language — literally. Bilingual, culturally rooted content that hits different.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     CASE STUDY
+═══════════════ -->
+<section id="case-study" aria-labelledby="cs-heading">
+  <div class="container">
+    <div class="reveal">
+      <div class="label" style="margin-bottom:28px;">Case Study</div>
+      <div class="cs-client">
+        <div class="cs-client-badge">Pet Dreamland — @petdreamlandd</div>
+      </div>
+    </div>
+
+    <div class="cs-cols reveal-scale">
+      <div class="cs-col prob">
+        <div class="cs-col-tag">The Problem</div>
+        <p class="cs-col-body">New brand with no content system. Posting was sporadic, reach was near zero, and there was no clear brand voice to attract and retain a pet-owner audience.</p>
+      </div>
+      <div class="cs-col sol">
+        <div class="cs-col-tag">Our Solution</div>
+        <p class="cs-col-body">Built a full content system from scratch — brand identity, Reels strategy, hook-first scripts, and a structured monthly calendar. Every post served a specific reach, save, or conversion goal.</p>
+      </div>
+      <div class="cs-col res">
+        <div class="cs-col-tag">The Result</div>
+        <p class="cs-col-body">
+          <span class="cs-big-num" data-count="3" data-suffix="×">0×</span>
+          Engagement rate growth in 60 days. Consistent reach, stronger brand presence, and a content engine that keeps compounding.
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-bottom reveal">
+      <blockquote class="cs-quote">
+        "3× engagement in 60 days — and a content system that keeps compounding."
+      </blockquote>
+      <a class="cs-link" href="https://www.instagram.com/petdreamlandd" target="_blank" rel="noopener" aria-label="View Pet Dreamland on Instagram">
+        View on Instagram ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     WHY US
+═══════════════ -->
+<section id="why" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="why-layout">
+      <div class="why-left reveal">
+        <div class="label" style="margin-bottom:20px;">Why Contendo</div>
+        <h2 class="section-h2" id="why-heading">Not a freelancer.<br><em>A full system.</em></h2>
+        <p>Strategy, creative, and execution under one roof. Most agencies talk about results — we build the engine that produces them.</p>
+        <a href="#cta" class="btn-primary" style="display:inline-flex; margin-top:36px;">Get Started ↗</a>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-item reveal reveal-delay-1">
+          <span class="why-item-icon" aria-hidden="true">🎯</span>
+          <h3 class="why-item-title">Strategy Before Content</h3>
+          <p class="why-item-desc">Every piece starts with a goal — reach, saves, DMs, or conversions. No random posting, ever.</p>
+        </article>
+        <article class="why-item reveal reveal-delay-2">
+          <span class="why-item-icon" aria-hidden="true">⚡</span>
+          <h3 class="why-item-title">Algorithm-Focused</h3>
+          <p class="why-item-desc">Hook structures, watch-time retention, save-worthy formats — content the Instagram algorithm is built to push.</p>
+        </article>
+        <article class="why-item reveal reveal-delay-3">
+          <span class="why-item-icon" aria-hidden="true">📈</span>
+          <h3 class="why-item-title">Results in 60 Days</h3>
+          <p class="why-item-desc">We don't ask for 6 months before showing value. Most clients see a measurable lift in the first two months.</p>
+        </article>
+        <article class="why-item reveal reveal-delay-4">
+          <span class="why-item-icon" aria-hidden="true">📋</span>
+          <h3 class="why-item-title">Full Transparency</h3>
+          <p class="why-item-desc">Monthly content calendar shared upfront. You review, approve, and we publish. You always know what's going out.</p>
+        </article>
+        <article class="why-item reveal">
+          <span class="why-item-icon" aria-hidden="true">🔁</span>
+          <h3 class="why-item-title">Ongoing Optimisation</h3>
+          <p class="why-item-desc">We track performance weekly and adjust. Every month gets sharper because we treat your data like a playbook.</p>
+        </article>
+        <article class="why-item reveal reveal-delay-1">
+          <span class="why-item-icon" aria-hidden="true">🤝</span>
+          <h3 class="why-item-title">One Roof. One Team.</h3>
+          <p class="why-item-desc">Strategy, creative, and execution unified. A complete growth engine, not a patchwork of freelancers.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     CLIENTS
+═══════════════ -->
+<section id="clients" aria-labelledby="clients-heading">
+  <div class="container">
+    <div class="clients-head">
+      <div>
+        <div class="label" style="margin-bottom:14px; display:flex;">Brands We've Grown</div>
+        <h2 class="section-h2" id="clients-heading" style="font-size:clamp(30px,3vw,44px);">Real brands.<br><em>Real results.</em></h2>
+      </div>
+    </div>
+
+    <div class="clients-rows">
+      <div class="client-row reveal">
+        <div>
+          <div class="client-name">Studio Cootell</div>
+          <div class="client-niche">Interior Design</div>
+        </div>
+        <p class="client-note">Content strategy and Reels production to build an aesthetic brand presence and grow a creative-industry audience on Instagram.</p>
+        <a class="client-handle" href="https://www.instagram.com/studio_cootell" target="_blank" rel="noopener" aria-label="Visit Studio Cootell on Instagram">@studio_cootell ↗</a>
+      </div>
+
+      <div class="client-row reveal">
+        <div>
+          <div class="client-name">Pet Dreamland</div>
+          <div class="client-niche">Pet Services</div>
+        </div>
+        <p class="client-note">Full content system from scratch — brand identity, scripted Reels, and a monthly calendar. 3× engagement growth in 60 days.</p>
+        <a class="client-handle" href="https://www.instagram.com/petdreamlandd" target="_blank" rel="noopener" aria-label="Visit Pet Dreamland on Instagram">@petdreamlandd ↗</a>
+      </div>
+
+      <div class="client-row reveal">
+        <div>
+          <div class="client-name">Wavelength Cafe Kolkata</div>
+          <div class="client-niche">F&amp;B / Hospitality</div>
+        </div>
+        <p class="client-note">Visual-first content strategy with Reels and poster design to drive footfall and build a loyal local community.</p>
+        <a class="client-handle" href="https://www.instagram.com/wavelengthcafekolkata" target="_blank" rel="noopener" aria-label="Visit Wavelength Cafe on Instagram">@wavelengthcafekolkata ↗</a>
+      </div>
+
+      <div class="client-row reveal">
+        <div>
+          <div class="client-name">Spartans Gym Dwarka</div>
+          <div class="client-niche">Health &amp; Fitness</div>
+        </div>
+        <p class="client-note">High-energy Reels content and social media management to attract new members and strengthen local brand authority.</p>
+        <a class="client-handle" href="https://www.instagram.com/spartansgymdwarka" target="_blank" rel="noopener" aria-label="Visit Spartans Gym on Instagram">@spartansgymdwarka ↗</a>
+      </div>
+
+      <div class="client-row reveal">
+        <div>
+          <div class="client-name">Chiropractor 360</div>
+          <div class="client-niche">Health &amp; Wellness</div>
+        </div>
+        <p class="client-note">Educational Reels and trust-building content to position the practice as a go-to authority and convert viewers into booked appointments.</p>
+        <a class="client-handle" href="https://www.instagram.com/chiropractor360" target="_blank" rel="noopener" aria-label="Visit Chiropractor 360 on Instagram">@chiropractor360 ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════
+     CTA
+═══════════════ -->
+<section id="cta" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="label cta-eyebrow reveal">Ready to Grow</div>
+    <h2 class="cta-h reveal" id="cta-heading">
+      Turn your Instagram<br>into a <em>client machine.</em>
+    </h2>
+    <p class="cta-sub reveal">
+      We take on a limited number of new brands each month. If you're serious about growing on Instagram and converting that attention into real revenue — let's talk.
+    </p>
+    <div class="cta-actions reveal">
+      <a href="tel:+918777021228" class="btn-primary" aria-label="Call Contendo">Book a Call ↗</a>
+    </div>
+    <div class="cta-contact reveal">
+      <div class="cta-contact-item">
+        <div class="cta-contact-label">Phone</div>
+        <a class="cta-contact-val" href="tel:+918777021228" aria-label="Call us">+91 87770 21228</a>
+      </div>
+      <div class="cta-contact-item">
+        <div class="cta-contact-label">Email</div>
+        <a class="cta-contact-val" href="mailto:hello@contendo.in" aria-label="Email us">hello@contendo.in</a>
+      </div>
+      <div class="cta-contact-item">
+        <div class="cta-contact-label">Instagram</div>
+        <a class="cta-contact-val" href="https://www.instagram.com/contendo" target="_blank" rel="noopener" aria-label="Visit our Instagram">@contendo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer aria-label="Site footer">
+  <div class="footer-inner">
+    <span class="footer-logo">Contendo</span>
+    <span class="footer-copy">© 2025 Contendo. All rights reserved.</span>
+    <a class="footer-ig" href="https://www.instagram.com/contendo" target="_blank" rel="noopener" aria-label="Follow us on Instagram">@contendo ↗</a>
+  </div>
+</footer>
+
+<!-- ═══ JS ANIMATION ENGINE ═══ -->
+<script>
+'use strict';
+
+/* ── Ease helpers ── */
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+/* ════════════════════════════════════════
+   1. SCROLL PROGRESS BAR
+════════════════════════════════════════ */
+const progressBar = document.getElementById('progress-bar');
+function updateProgress() {
+  const scrolled = window.scrollY;
+  const total    = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+}
+
+/* ════════════════════════════════════════
+   2. NAV SCROLL STATE
+════════════════════════════════════════ */
+const nav = document.getElementById('nav');
+function updateNav() {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}
+
+/* ════════════════════════════════════════
+   3. MOBILE HAMBURGER
+════════════════════════════════════════ */
+(function() {
+  const btn  = document.getElementById('navHamburger');
+  const menu = document.getElementById('navMobileMenu');
+  if (!btn || !menu) return;
+  function openMenu() {
+    btn.classList.add('open');
+    menu.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', () => btn.classList.contains('open') ? closeMenu() : openMenu());
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+})();
+
+/* ════════════════════════════════════════
+   4. HERO IMAGE PARALLAX
+════════════════════════════════════════ */
+const heroImg = document.getElementById('heroImg');
+if (heroImg) {
+  heroImg.addEventListener('load', () => heroImg.classList.add('loaded'));
+  if (heroImg.complete) heroImg.classList.add('loaded');
+}
+function updateHeroParallax() {
+  if (!heroImg) return;
+  const scrolled = window.scrollY;
+  const max = window.innerHeight;
+  if (scrolled > max) return;
+  const factor = scrolled / max;
+  heroImg.style.transform = `scale(1.06) translateY(${factor * 60}px)`;
+}
+
+/* ════════════════════════════════════════
+   5. CASE STUDY WATERMARK PARALLAX
+════════════════════════════════════════ */
+const csSection = document.getElementById('case-study');
+if (csSection) {
+  const phantom = document.createElement('div');
+  phantom.style.cssText = `
+    position:absolute; right:-20px; top:50%; transform:translateY(-50%);
+    font-family:'Instrument Serif',Georgia,serif; font-size:clamp(160px,28vw,320px);
+    color:rgba(255,255,255,0.045); line-height:1; pointer-events:none;
+    user-select:none; will-change:transform; z-index:0;
+  `;
+  phantom.textContent = '3×';
+  csSection.appendChild(phantom);
+
+  const overrideStyle = document.createElement('style');
+  overrideStyle.textContent = '#case-study::before { display: none !important; }';
+  document.head.appendChild(overrideStyle);
+
+  function updatePhantomParallax() {
+    const rect   = csSection.getBoundingClientRect();
+    const center = (rect.top + rect.height / 2) - window.innerHeight / 2;
+    const shift  = clamp(center * 0.15, -50, 50);
+    phantom.style.transform = `translateY(calc(-50% + ${shift}px))`;
+  }
+  window.addEventListener('scroll', updatePhantomParallax, { passive: true });
+  updatePhantomParallax();
+}
+
+/* ════════════════════════════════════════
+   6. UNIFIED SCROLL HANDLER
+════════════════════════════════════════ */
+let ticking = false;
+function onScroll() {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      updateProgress();
+      updateNav();
+      updateHeroParallax();
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+updateProgress();
+updateNav();
+
+/* ════════════════════════════════════════
+   7. INTERSECTION OBSERVER — ALL REVEAL TYPES
+════════════════════════════════════════ */
+const allReveals = document.querySelectorAll(
+  '.reveal, .reveal-left, .reveal-right, .reveal-scale, .clip-reveal'
+);
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealIO.unobserve(e.target);
+      e.target.querySelectorAll('[data-count]').forEach(el => animateCounter(el));
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+allReveals.forEach(el => revealIO.observe(el));
+
+document.querySelectorAll('[data-count]').forEach(el => {
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { animateCounter(e.target); counterIO.unobserve(e.target); }
+    });
+  }, { threshold: 0.5 });
+  counterIO.observe(el);
+});
+
+/* ════════════════════════════════════════
+   8. COUNTER ANIMATION
+════════════════════════════════════════ */
+function animateCounter(el) {
+  if (el.dataset.counted) return;
+  el.dataset.counted = '1';
+  const target   = parseFloat(el.dataset.count);
+  const suffix   = el.dataset.suffix || '';
+  const duration = 1400;
+  const start    = performance.now();
+  function step(now) {
+    const t   = clamp((now - start) / duration, 0, 1);
+    const val = easeOutCubic(t) * target;
+    el.textContent = (Number.isInteger(target) ? Math.round(val) : val.toFixed(1)) + suffix;
+    if (t < 1) requestAnimationFrame(step);
+    else el.textContent = target + suffix;
+  }
+  requestAnimationFrame(step);
+}
+
+/* ════════════════════════════════════════
+   9. HERO TYPEWRITER
+════════════════════════════════════════ */
+(function heroTypewriter() {
+  const staticEl = document.querySelector('.tw-static');
+  const cursorEl = document.querySelector('.tw-cursor-hero');
+  if (!staticEl || !cursorEl) return;
+
+  const segments = [
+    { text: 'We turn content\ninto ', italic: false },
+    { text: 'clients.',              italic: true  },
+  ];
+
+  let segIdx = 0, charIdx = 0;
+  let currentSpan = null;
+
+  function buildNextSpan(italic) {
+    const s = document.createElement('span');
+    if (italic) {
+      const em = document.createElement('em');
+      s.appendChild(em);
+      currentSpan = em;
+    } else {
+      currentSpan = s;
+    }
+    staticEl.appendChild(s);
+  }
+
+  function typeChar() {
+    if (segIdx >= segments.length) {
+      setTimeout(() => cursorEl.classList.add('done'), 800);
+      document.querySelectorAll('.hero-stat-num[data-count]').forEach(animateCounter);
+      return;
+    }
+    const seg = segments[segIdx];
+    if (charIdx === 0) buildNextSpan(seg.italic);
+    const char = seg.text[charIdx];
+    if (char === '\n') {
+      staticEl.insertBefore(document.createElement('br'), cursorEl);
+    } else {
+      currentSpan.textContent += char;
+    }
+    charIdx++;
+    if (charIdx >= seg.text.length) { segIdx++; charIdx = 0; }
+    const delay = char === '.' ? 280 : char === '\n' ? 120 : 38 + Math.random() * 22;
+    setTimeout(typeChar, delay);
+  }
+
+  setTimeout(typeChar, 900);
+})();
+
+/* ════════════════════════════════════════
+   10. CTA TYPEWRITER (on scroll into view)
+════════════════════════════════════════ */
+(function ctaTypewriter() {
+  const ctaH = document.getElementById('cta-heading');
+  if (!ctaH) return;
+
+  const ctaIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting || ctaH.dataset.twDone) return;
+      ctaH.dataset.twDone = '1';
+      ctaIO.unobserve(ctaH);
+
+      ctaH.innerHTML = '';
+      const display = document.createElement('span');
+      display.style.whiteSpace = 'pre-wrap';
+      const cursor = document.createElement('span');
+      cursor.className = 'tw-inline-cursor';
+      ctaH.appendChild(display);
+      ctaH.appendChild(cursor);
+
+      const lines = [
+        { text: 'Turn your Instagram\ninto a ', italic: false },
+        { text: 'client machine.',              italic: true  },
+      ];
+
+      let si = 0, ci = 0;
+      let activeEl = null;
+
+      function buildSpan(italic) {
+        if (italic) {
+          const em = document.createElement('em');
+          display.appendChild(em);
+          activeEl = em;
+        } else {
+          activeEl = display;
+        }
+      }
+
+      function typeNext() {
+        if (si >= lines.length) {
+          setTimeout(() => { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }, 600);
+          return;
+        }
+        const seg  = lines[si];
+        if (ci === 0) buildSpan(seg.italic);
+        const char = seg.text[ci];
+        if (char === '\n') {
+          display.appendChild(document.createElement('br'));
+        } else {
+          if (activeEl === display) {
+            const last = display.lastChild;
+            if (last && last.nodeType === 3) last.textContent += char;
+            else display.insertBefore(document.createTextNode(char), cursor);
+          } else {
+            activeEl.textContent += char;
+          }
+        }
+        ci++;
+        if (ci >= seg.text.length) { si++; ci = 0; }
+        const delay = char === '.' ? 300 : char === '\n' ? 150 : 42 + Math.random() * 20;
+        setTimeout(typeNext, delay);
+      }
+      setTimeout(typeNext, 200);
+    });
+  }, { threshold: 0.3 });
+  ctaIO.observe(ctaH);
+})();
+
+/* ════════════════════════════════════════
+   11. ROTATING WORD IN HERO SUBTITLE
+════════════════════════════════════════ */
+(function rotatingWord() {
+  const slot = document.getElementById('rotate-slot');
+  if (!slot) return;
+  const track = slot.querySelector('.word-slot-track');
+  const words = track.querySelectorAll('span');
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % words.length;
+    track.style.transform = `translateY(-${current * 1.2}em)`;
+  }, 2200);
+})();
+
+/* ════════════════════════════════════════
+   12. STAGGERED SERVICE CARDS
+════════════════════════════════════════ */
+(function staggerCards() {
+  const grid = document.querySelector('.services-grid');
+  if (!grid) return;
+  const cards = grid.querySelectorAll('.svc-card');
+  cards.forEach(c => {
+    c.style.opacity   = '0';
+    c.style.transform = 'translateY(32px)';
+    c.style.transition = 'opacity .65s cubic-bezier(0.22,1,0.36,1), transform .65s cubic-bezier(0.22,1,0.36,1)';
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      cards.forEach((card, i) => {
+        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, i * 100);
+      });
+      io.unobserve(grid);
+    });
+  }, { threshold: 0.1 });
+  io.observe(grid);
+})();
+
+/* ════════════════════════════════════════
+   13. STAGGERED CLIENT ROWS
+════════════════════════════════════════ */
+(function staggerRows() {
+  const rows = document.querySelectorAll('.client-row');
+  rows.forEach((row, i) => {
+    row.style.opacity   = '0';
+    row.style.transform = 'translateX(-24px)';
+    row.style.transition = `opacity .6s cubic-bezier(0.22,1,0.36,1) ${i * 80}ms, transform .6s cubic-bezier(0.22,1,0.36,1) ${i * 80}ms`;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        row.style.opacity   = '1';
+        row.style.transform = 'translateX(0)';
+        io.unobserve(row);
+      });
+    }, { threshold: 0.15 });
+    io.observe(row);
+  });
+})();
+
+/* ════════════════════════════════════════
+   14. WHY GRID STAGGER
+════════════════════════════════════════ */
+(function staggerWhy() {
+  const items = document.querySelectorAll('.why-item');
+  items.forEach((item, i) => {
+    item.style.opacity   = '0';
+    item.style.transform = 'translateY(24px)';
+    item.style.transition = `opacity .6s cubic-bezier(0.22,1,0.36,1) ${i * 70}ms, transform .6s cubic-bezier(0.22,1,0.36,1) ${i * 70}ms`;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        item.style.opacity   = '1';
+        item.style.transform = 'translateY(0)';
+        io.unobserve(item);
+      });
+    }, { threshold: 0.15 });
+    io.observe(item);
+  });
+})();
+</script>
+</body>
+</html>
