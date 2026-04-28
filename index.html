@@ -1726,18 +1726,12 @@ function animateCounter(el) {
   ];
 
   let segIdx = 0, charIdx = 0;
-  let currentSpan = null;
+  let currentEl = null;
 
   function buildNextSpan(italic) {
-    const s = document.createElement('span');
-    if (italic) {
-      const em = document.createElement('em');
-      s.appendChild(em);
-      currentSpan = em;
-    } else {
-      currentSpan = s;
-    }
-    staticEl.appendChild(s);
+    const el = document.createElement(italic ? 'em' : 'span');
+    staticEl.appendChild(el);
+    currentEl = el;
   }
 
   function typeChar() {
@@ -1749,14 +1743,10 @@ function animateCounter(el) {
     const seg = segments[segIdx];
     if (charIdx === 0) buildNextSpan(seg.italic);
     const char = seg.text[charIdx];
-    if (char === '\n') {
-      currentSpan.parentNode.appendChild(document.createElement('br'));
-    } else {
-      currentSpan.textContent += char;
-    }
+    currentEl.textContent += char;
     charIdx++;
     if (charIdx >= seg.text.length) { segIdx++; charIdx = 0; }
-    const delay = char === '.' ? 280 : char === '\n' ? 120 : 38 + Math.random() * 22;
+    const delay = char === '.' ? 280 : 38 + Math.random() * 22;
     setTimeout(typeChar, delay);
   }
 
