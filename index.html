@@ -95,6 +95,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -307,10 +308,14 @@ nav.scrolled {
   line-height: 1.75;
   color: var(--sage-dark);
   max-width: 420px;
-  margin-bottom: 48px;
+  margin-bottom: 12px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp .9s var(--ease-out) .5s forwards;
+}
+.hero-sub-2 {
+  margin-bottom: 48px;
+  margin-top: 0;
 }
 
 .hero-actions {
@@ -1125,9 +1130,9 @@ footer {
    RESPONSIVE
 ═══════════════════════════════════════════ */
 @media (max-width: 900px) {
-  #hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 120px 28px 60px; }
-  .hero-right { height: 60vw; order: -1; }
+  #hero { grid-template-columns: 1fr; min-height: auto; width: 100%; }
+  .hero-left { padding: 120px 28px 60px; width: 100%; }
+  .hero-right { height: 60vw; order: -1; width: 100%; max-width: 100%; }
   .hero-stats { flex-wrap: wrap; gap: 28px; }
 
   .services-grid { grid-template-columns: 1fr; }
@@ -1201,16 +1206,9 @@ footer {
       <span class="hero-h1-full" style="position:absolute;opacity:0;pointer-events:none" aria-label="We turn content into clients.">We turn content<br>into <em>clients.</em></span>
     </h1>
     <p class="hero-sub">
-      A strategy-first agency that turns your Instagram into a
-      <span id="rotate-slot" class="word-slot" aria-label="client machine">
-        <span class="word-slot-track">
-          <span>client machine.</span>
-          <span>growth engine.</span>
-          <span>sales channel.</span>
-          <span>brand asset.</span>
-          <span>client machine.</span>
-        </span>
-      </span><br>
+      A strategy-first agency that turns your Instagram into a <span id="rotate-slot" class="word-slot" aria-label="client machine"><span class="word-slot-track"><span>client machine.</span><span>growth engine.</span><span>sales channel.</span><span>brand asset.</span><span>client machine.</span></span></span>
+    </p>
+    <p class="hero-sub hero-sub-2">
       Reels, design, strategy — one system, compounding results.
     </p>
     <div class="hero-actions">
