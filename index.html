@@ -426,7 +426,7 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--sage-pale);
+  color: #c8ddd5;
   padding: 0 40px;
   display: flex;
   align-items: center;
@@ -435,7 +435,7 @@ nav.scrolled {
 }
 .marquee-item::after {
   content: '✦';
-  color: var(--beige-light);
+  color: #e5d9cc;
   font-size: 8px;
 }
 @keyframes marquee {
@@ -693,12 +693,12 @@ nav.scrolled {
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--sage-light);
-  border-bottom: 1px solid rgba(168,193,181,.4);
+  color: #c8ddd5;
+  border-bottom: 1px solid rgba(200,221,213,.35);
   padding-bottom: 3px;
   transition: color .2s, border-color .2s;
 }
-.cs-link:hover { color: var(--white); border-color: var(--white); }
+.cs-link:hover { color: #ffffff; border-color: #ffffff; }
 
 /* ═══════════════════════════════════════════
    WHY US
@@ -1696,7 +1696,7 @@ function animateCounter(el) {
     if (charIdx === 0) buildNextSpan(seg.italic);
     const char = seg.text[charIdx];
     if (char === '\n') {
-      staticEl.insertBefore(document.createElement('br'), cursorEl);
+      currentSpan.parentNode.appendChild(document.createElement('br'));
     } else {
       currentSpan.textContent += char;
     }
@@ -1759,13 +1759,7 @@ function animateCounter(el) {
         if (char === '\n') {
           display.appendChild(document.createElement('br'));
         } else {
-          if (activeEl === display) {
-            const last = display.lastChild;
-            if (last && last.nodeType === 3) last.textContent += char;
-            else display.insertBefore(document.createTextNode(char), cursor);
-          } else {
-            activeEl.textContent += char;
-          }
+          activeEl.textContent += char;
         }
         ci++;
         if (ci >= seg.text.length) { si++; ci = 0; }
