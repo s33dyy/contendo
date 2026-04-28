@@ -219,7 +219,8 @@ nav.scrolled {
   border: none;
   cursor: pointer;
   padding: 6px;
-  z-index: 110;
+  z-index: 200;
+  position: relative;
 }
 .nav-hamburger span {
   display: block;
@@ -260,6 +261,21 @@ nav.scrolled {
   transition: color .2s;
 }
 .nav-mobile-link:hover { color: var(--sage-dark); }
+
+.nav-mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--forest);
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color .2s, transform .2s;
+}
+.nav-mobile-close:hover { color: var(--sage-dark); transform: rotate(90deg); }
 
 /* ═══════════════════════════════════════════
    HERO
@@ -1188,6 +1204,7 @@ footer {
 
 <!-- Mobile menu -->
 <div class="nav-mobile-menu" id="navMobileMenu" aria-hidden="true">
+  <button class="nav-mobile-close" id="navMobileClose" aria-label="Close menu">&times;</button>
   <a href="#services" class="nav-mobile-link">Services</a>
   <a href="#creative" class="nav-mobile-link">Creative</a>
   <a href="#case-study" class="nav-mobile-link">Results</a>
@@ -1594,6 +1611,8 @@ function updateNav() {
     menu.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
+  const closeBtn = document.getElementById('navMobileClose');
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
   btn.addEventListener('click', () => btn.classList.contains('open') ? closeMenu() : openMenu());
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
