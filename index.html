@@ -335,11 +335,13 @@ nav.scrolled {
   border-radius: 50px;
   letter-spacing: .3px;
   transition: background .25s, transform .25s var(--ease-out), box-shadow .25s;
+  animation: pulseCta 2.8s ease-in-out infinite;
 }
 .btn-primary:hover {
-  background: var(--sage-light);
+  background: var(--sage-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(111,143,123,.25);
+  box-shadow: 0 8px 24px rgba(111,143,123,.35);
+  animation: none;
 }
 .btn-secondary {
   display: inline-flex;
@@ -485,6 +487,20 @@ nav.scrolled {
 .svc-card:hover { background: var(--ink-3); }
 .svc-card:hover .svc-arrow { opacity: 1; transform: translate(0, 0); }
 .svc-card:hover .svc-icon { transform: scale(1.15) rotate(-5deg); }
+.svc-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(111,143,123,.08) 50%, transparent 60%);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.svc-card:hover::after {
+  opacity: 1;
+  animation: shimmer .7s ease forwards;
+}
 
 .svc-num {
   font-family: var(--ff-mono);
@@ -572,7 +588,14 @@ nav.scrolled {
   transition: transform .6s var(--ease-out);
   display: block;
 }
-.creative-card:hover .creative-img-wrap img { transform: scale(1.03); }
+.creative-card:hover .creative-img-wrap img { transform: scale(1.05); }
+.creative-card {
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
+}
+.creative-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(46,69,53,.12);
+}
 
 .creative-caption {
   padding: 28px 32px;
@@ -651,9 +674,17 @@ nav.scrolled {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-.cs-col.prob .cs-col-tag { color: var(--beige); }
-.cs-col.sol  .cs-col-tag { color: var(--sage-light); }
+.cs-col.prob .cs-col-tag { color: #e5d9cc; }
+.cs-col.sol  .cs-col-tag { color: #c8ddd5; }
 .cs-col.res  .cs-col-tag { color: #a8d4b8; }
+
+/* Case study label override — sits on dark --forest bg */
+#case-study .label {
+  color: #c8ddd5;
+}
+#case-study .label::before {
+  background: #c8ddd5;
+}
 
 .cs-col-body {
   font-size: 14px;
@@ -668,6 +699,7 @@ nav.scrolled {
   line-height: 1;
   margin-bottom: 12px;
   display: block;
+  animation: floatY 4s ease-in-out infinite;
 }
 
 .cs-bottom {
@@ -739,9 +771,9 @@ nav.scrolled {
 .why-item {
   background: var(--ink-2);
   padding: 32px 30px;
-  transition: background .3s;
+  transition: background .3s, transform .3s var(--ease-out);
 }
-.why-item:hover { background: var(--ink-3); }
+.why-item:hover { background: var(--ink-3); transform: translateY(-2px); }
 .why-item:hover .why-item-icon { transform: scale(1.2) rotate(-8deg); }
 .why-item-icon {
   font-size: 24px;
@@ -952,6 +984,22 @@ footer {
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes pulseCta {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(111,143,123,.45); }
+  50%      { box-shadow: 0 0 0 10px rgba(111,143,123,0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.92) translateY(20px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
@@ -964,7 +1012,13 @@ footer {
   transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: .1s; }
+/* ── Staggered children ── */
+.stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+
+/* ── CS cols stagger ── */
+.cs-cols .cs-col:nth-child(1) { transition-delay: 0ms; }
+.cs-cols .cs-col:nth-child(2) { transition-delay: 120ms; }
+.cs-cols .cs-col:nth-child(3) { transition-delay: 240ms; }
 .reveal-delay-2 { transition-delay: .2s; }
 .reveal-delay-3 { transition-delay: .3s; }
 .reveal-delay-4 { transition-delay: .4s; }
